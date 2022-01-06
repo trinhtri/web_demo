@@ -1,0 +1,25 @@
+﻿{
+  "name": "Supar Car",
+  "assetsFolder": "./ClientApp",
+  "outputFolder": "./wwwroot/dist",
+  "entryPoints": [
+    {
+      "name": "Home",
+      "file": "./pages/home.js",
+      "views": [
+        "./Views/Home/Index.cshtml"
+      ]
+    }
+  ],
+  "appSettingKeys": [
+  ],
+  "publicPath": "",
+  "env": {
+    "production": {
+      "publicPath": "/dist"
+    },
+    "dev": {
+      "publicPath": "/dist"
+    }
+  }
+}
