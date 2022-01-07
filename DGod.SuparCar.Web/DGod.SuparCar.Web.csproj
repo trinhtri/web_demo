@@ -12,16 +12,10 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="ClientApp\modules" />
-      <Folder Include="ClientApp\styles\common" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\DGod.SuparCar.Application\DGod.SuparCar.Application.csproj" />
       <ProjectReference Include="..\DGod.SuparCar.Infrastructure.Shared\DGod.SuparCar.Infrastructure.Shared.csproj" />
       <ProjectReference Include="..\DGod.SuparCar.Infrastructure\DGod.SuparCar.Infrastructure.csproj" />
       <ProjectReference Include="..\DGod.SuparCar.Result\DGod.SuparCar.Result.csproj" />
-      <ProjectReference Include="..\DGod.SuparCar.Shared\DGod.SuparCar.Shared.csproj" />
     </ItemGroup>
 
     <ItemGroup>
