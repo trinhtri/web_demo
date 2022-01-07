@@ -10,6 +10,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const helpers = require('./helpers');
 const { name, publicPath, outputFolderPath, chunks, assetsFolderPath, appSettings } = helpers.getProjectInfo();
 
+const abc = helpers.getProjects()
+
 const postcssOptions = {
   plugins: [
     [

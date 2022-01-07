@@ -70,7 +70,8 @@ function getHTMLPlugins(chunks) {
 }
 
 function getProjects() {
-  const files = glob.sync(path.resolve(process.cwd(), `*/builder.config.js`));
+  const configPath = path.resolve(process.cwd(), `*/builder.config.json`);
+  const files = glob.sync(configPath);
   return files.map((filePath) => {
     const { name } = path.parse(filePath);
     return name;

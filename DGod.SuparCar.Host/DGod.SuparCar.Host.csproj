@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="OrchardCore.Application.Mvc.Targets" Version="1.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DGod.SuparCar.Module.Web\DGod.SuparCar.Module.Web.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\dist\common.bd42f823e718b6a63e7e.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\dist\home.3ec10bae68cbf974dada.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\dist\home.3ec10bae68cbf974dada.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\dist\runtime~common.8031c81b3bebc0b00f93.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\dist\runtime~home.119c81f96f4a1712b7ae.js" />
+    </ItemGroup>
+
+</Project>
