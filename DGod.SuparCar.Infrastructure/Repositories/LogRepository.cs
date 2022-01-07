@@ -4,6 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using DGod.SuparCar.Application.DTOs.Logs;
 using DGod.SuparCar.Application.Interfaces.Repositories;
 using DGod.SuparCar.Application.Interfaces.Shared;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Linq;
 
 namespace DGod.SuparCar.Infrastructure.Repositories
 {

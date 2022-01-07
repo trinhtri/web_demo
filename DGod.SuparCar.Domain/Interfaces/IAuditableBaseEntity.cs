@@ -1,18 +1,22 @@
-﻿namespace DGod.SuparCar.Domain.Interfaces;
+﻿using System;
 
-internal interface IAuditableBaseEntity : IBaseEntity
+namespace DGod.SuparCar.Domain.Interfaces
 {
-    string CreatedBy { get; set; }
+    internal interface IAuditableBaseEntity : IBaseEntity
+    {
+        string CreatedBy { get; set; }
 
-    DateTime CreatedOn { get; set; }
+        DateTime CreatedOn { get; set; }
 
-    DateTime CreatedOnGmt { get; set; }
-    
-    string LastModifiedBy { get; set; }
-    
-    DateTime? LastModifiedOn { get; set; }
-    
-    DateTime LastModifiedOnGmt { get; set; }
-    
-    
+        DateTime CreatedOnGmt { get; set; }
+
+        string LastModifiedBy { get; set; }
+
+        DateTime? LastModifiedOn { get; set; }
+
+        DateTime LastModifiedOnGmt { get; set; }
+
+
+    }
 }
+

@@ -1,7 +1,9 @@
-﻿namespace DGod.SuparCar.Application.Interfaces.Shared;
-
-public interface IAuthenticatedUserService
+﻿namespace DGod.SuparCar.Application.Interfaces.Shared
 {
-    string UserId { get; }
-    public string Username { get; }
+    public interface IAuthenticatedUserService
+    {
+        string UserId { get; }
+        public string Username { get; }
+    }
 }
+

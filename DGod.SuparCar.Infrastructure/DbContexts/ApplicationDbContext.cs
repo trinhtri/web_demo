@@ -1,23 +1,24 @@
 ﻿using System.Data;
+using System.Linq;
 using AspNetCoreHero.EntityFrameworkCore.AuditTrail;
 using DGod.SuparCar.Application.Interfaces.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace DGod.SuparCar.Infrastructure.DbContexts;
-
-public class ApplicationDbContext : DbContext, IApplicationDbContext
+namespace DGod.SuparCar.Infrastructure.DbContexts
+{
+    public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
-            
+
         }
 
         public IDbConnection Connection => Database.GetDbConnection();
 
         public bool HasChanges => ChangeTracker.HasChanges();
-        
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             foreach (IMutableEntityType entity in builder.Model.GetEntityTypes())
@@ -33,3 +34,5 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
             base.OnModelCreating(builder);
         }
     }
+}
+

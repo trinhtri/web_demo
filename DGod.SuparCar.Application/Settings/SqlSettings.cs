@@ -1,6 +1,8 @@
-﻿namespace DGod.SuparCar.Application.Settings;
-
-public class SqlSettings
+﻿namespace DGod.SuparCar.Application.Settings
 {
-    public string ApplicationConnection { get; set; }
+
+    public class SqlSettings
+    {
+        public string ApplicationConnection { get; set; }
+    }
 }

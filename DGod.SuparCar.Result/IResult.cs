@@ -1,8 +1,9 @@
-﻿namespace DGod.SuparCar.Result;
-
-public interface IResult
+﻿namespace DGod.SuparCar.Result
 {
-    string Message { get; set; }
+    public interface IResult
+    {
+        string Message { get; set; }
 
-    bool Succeeded { get; set; }
+        bool Succeeded { get; set; }
+    }
 }

@@ -1,18 +1,24 @@
-﻿namespace DGod.SuparCar.Application.Interfaces.Repositories;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-public interface IRepositoryAsync<T> where T : class
+namespace DGod.SuparCar.Application.Interfaces.Repositories
 {
-    IQueryable<T> Entities { get; }
+    public interface IRepositoryAsync<T> where T : class
+    {
+        IQueryable<T> Entities { get; }
 
-    Task<T> GetByIdAsync(int id);
+        Task<T> GetByIdAsync(int id);
 
-    Task<List<T>> GetAllAsync();
+        Task<List<T>> GetAllAsync();
 
-    Task<List<T>> GetPagedResponseAsync(int pageNumber, int pageSize);
+        Task<List<T>> GetPagedResponseAsync(int pageNumber, int pageSize);
 
-    Task<T> AddAsync(T entity);
+        Task<T> AddAsync(T entity);
 
-    Task UpdateAsync(T entity);
+        Task UpdateAsync(T entity);
 
-    Task DeleteAsync(T entity);
+        Task DeleteAsync(T entity);
+    }
 }
+

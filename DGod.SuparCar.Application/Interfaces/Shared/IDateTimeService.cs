@@ -1,6 +1,10 @@
-﻿namespace DGod.SuparCar.Application.Interfaces.Shared;
+﻿using System;
 
-public interface IDateTimeService
+namespace DGod.SuparCar.Application.Interfaces.Shared
 {
-    DateTime NowUtc { get; }
+
+    public interface IDateTimeService
+    {
+        DateTime NowUtc { get; }
+    }
 }

@@ -1,8 +1,14 @@
-﻿namespace DGod.SuparCar.Application.Interfaces.Repositories;
+﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
 
-public interface IUnitOfWork : IDisposable
+namespace DGod.SuparCar.Application.Interfaces.Repositories
 {
-    Task<int> Commit(CancellationToken cancellationToken);
+    public interface IUnitOfWork : IDisposable
+    {
+        Task<int> Commit(CancellationToken cancellationToken);
 
-    Task Rollback();
+        Task Rollback();
+    }
 }
+

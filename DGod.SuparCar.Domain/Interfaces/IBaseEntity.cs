@@ -1,6 +1,8 @@
-﻿namespace DGod.SuparCar.Domain.Interfaces;
-
-public interface IBaseEntity
+﻿namespace DGod.SuparCar.Domain.Interfaces
 {
-    long Id { get; set; }
+    public interface IBaseEntity
+    {
+        long Id { get; set; }
+    }
 }
+

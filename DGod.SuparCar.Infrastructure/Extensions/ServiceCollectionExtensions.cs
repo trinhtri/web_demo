@@ -6,24 +6,26 @@ using DGod.SuparCar.Infrastructure.Repositories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DGod.SuparCar.Infrastructure.Extensions;
-
-public static class ServiceCollectionExtensions
+namespace DGod.SuparCar.Infrastructure.Extensions
 {
-    public static void AddPersistenceContexts(this IServiceCollection services, IConfiguration configuration)
+    public static class ServiceCollectionExtensions
     {
-        services.AddAutoMapper(Assembly.GetExecutingAssembly());
-        services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
-    }
+        public static void AddPersistenceContexts(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
+        }
 
-    public static void AddRepositories(this IServiceCollection services)
-    {
-        #region Repositories
+        public static void AddRepositories(this IServiceCollection services)
+        {
+            #region Repositories
 
-        services.AddTransient(typeof(IRepositoryAsync<>), typeof(RepositoryAsync<>));
-        services.AddTransient<ILogRepository, LogRepository>();
-        services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddTransient(typeof(IRepositoryAsync<>), typeof(RepositoryAsync<>));
+            services.AddTransient<ILogRepository, LogRepository>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
 
-        #endregion Repositories
+            #endregion Repositories
+        }
     }
 }
+
