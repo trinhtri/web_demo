@@ -11,11 +11,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="ClientApp\modules" />
-      <Folder Include="ClientApp\styles\common" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\DGod.SuparCar.Application\DGod.SuparCar.Application.csproj" />
       <ProjectReference Include="..\DGod.SuparCar.Domain\DGod.SuparCar.Domain.csproj" />
       <ProjectReference Include="..\DGod.SuparCar.Infrastructure.CacheService\DGod.SuparCar.Infrastructure.CacheService.csproj" />
