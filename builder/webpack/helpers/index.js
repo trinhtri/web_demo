@@ -14,7 +14,9 @@ const snakeCase = require('lodash/snakeCase');
 const isNil = require('lodash/isNil');
 const merge = require('lodash/merge');
 const glob = require('glob');
+const uniqueId = require('lodash/uniqueId');
 const slugify = require('slugify');
+const randomString = require("randomstring");
 
 function generateTemplate(content, { files }) {
   const { js, css } = files;
@@ -65,7 +67,6 @@ function getHTMLPlugins(chunks) {
   });
 
   plugins.push(new HtmlWebpackHarddiskPlugin());
-
   return plugins;
 }
 
@@ -78,7 +79,7 @@ function getProjects() {
   });
 }
 
-function getProjectInfo(folder = process.env.PROJECT || 'DGod.SuparCar.Web') {
+function getProjectInfo(folder = process.env.PROJECT || 'DGod.SuparCar.Host') {
   const projectFolderPath = path.resolve(process.cwd(), `${folder}`);
   const configPath = `${projectFolderPath}/builder.config.json`;
   const appSettings = mergeAppConfig(projectFolderPath, process.env.ASPNETCORE_ENVIRONMENT)
@@ -88,42 +89,61 @@ function getProjectInfo(folder = process.env.PROJECT || 'DGod.SuparCar.Web') {
   // const rawAppSetting = require(appSettingPath); //eslint-disable-line
   const rawAppSetting = appSettings; //eslint-disable-line
 
-  const { assetsFolder, outputFolder, entryPoints, appSettingKeys = [] } = rawConfig;
-
-  //Resolve folder path
-  const paths = {};
-  forEach({ assetsFolder, outputFolder }, (folderName, key) => {
-    paths[`${key}Path`] = path.resolve(projectFolderPath, folderName);
-  });
-
+  const { assetsFolder, outputFolder, entryPoints=[], modules = [], appSettingKeys = [] } = rawConfig;
+  const entry = {};
+  const moduleConfigs = []  
   //Read all layouts
-  const defaultViews = [
-    ...glob.sync(path.resolve(projectFolderPath, `./Views/Shared/Layouts/*.cshtml`)),
-    ...glob.sync(path.resolve(projectFolderPath, `./Views/Shared/Layouts/*.html`))
-  ];
+  let defaultViews = [];
+  const paths = {}
+  paths[`${Object.keys({outputFolder})[0]}Path`] = path.resolve(projectFolderPath, outputFolder);
 
-  const chunks = defaultViews.map((viewPath) => {
-    return {
-      chunk: 'common',
-      view: viewPath,
-    };
+  forEach(modules, (module) => {
+    let folder = path.resolve(process.cwd(), `${module}`);
+    let configP = `${folder}/builder.config.json`;
+    let config = require(configP); 
+    const { assetsFolder: af } = config;
+    paths[module] = path.resolve(folder, af);
+    const chunkName = slugify(`common-${config.name}`).toLowerCase();
+    forEach(config.entryPoints, (ep)=>{
+      entryPoints.push({...ep, module: module, folder: folder, chunkName: slugify(config.name).toLowerCase()});
+    })
+
+    entry[chunkName] = path.resolve(folder, af,'index.js');
+    moduleConfigs.push(config);
+
+    defaultViews = [...defaultViews, {
+      chunk: chunkName,
+      viewPaths: [
+      ...glob.sync(path.resolve(folder, `./Views/Shared/Layouts/*.cshtml`)),
+      ...glob.sync(path.resolve(folder, `./Views/Shared/Layouts/*.html`))]
+    }]
   })
+
+
+  let chunks = []
+
+  forEach(defaultViews, ((view) => {
+    const { chunk, viewPaths } = view;
+    chunks = [...chunks,...viewPaths.map((viewPath) => {
+      return {
+        chunk: chunk,
+        view: path.resolve(viewPath)
+      };
+    })]
+  }))
   // default webpack entry
-  const entry = {
-    common: path.resolve(paths.assetsFolderPath, 'index.js'),
-  };
   
   //Build entry points based pages
-  forEach(entryPoints, ({ name, file, views }) => {
+  forEach(entryPoints, ({ name, file, views, module, folder, chunkName }) => {
 
-    const alias = slugify(name).toLowerCase();
-    const filePath = path.resolve(paths.assetsFolderPath, file);
+    const alias = slugify(`${name}-${chunkName}`).toLowerCase();
+    const filePath = path.resolve(paths[module], file);
 
     // automatically inject script & css
     forEach(views, (viewPath) => {
       chunks.push({
         chunk: alias,
-        view: path.resolve(projectFolderPath, viewPath),
+        view: path.resolve(folder, viewPath),
       });
     });
 

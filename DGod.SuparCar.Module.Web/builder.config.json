@@ -1,7 +1,6 @@
 ﻿{
   "name": "Supar Car",
   "assetsFolder": "./ClientApp",
-  "outputFolder": "./wwwroot/dist",
   "entryPoints": [
     {
       "name": "Home",

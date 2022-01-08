@@ -163,9 +163,7 @@ module.exports = (options) => {
       extensions: ['.js', '.jsx'],
       mainFields: ['browser', 'main', 'jsnext:main'],
       alias: {
-        '~': assetsFolderPath,
         '@front-end': path.resolve(process.cwd(), 'DGod.SuparCar.FrontEndCore'),
-        '@web': path.resolve(process.cwd(), 'DGod.SuparCar.Web/ClientApp'),
         ...((options.resolve && options.resolve.alias) || []),
       },
     },

@@ -1,19 +1,10 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc.Authorization;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using System.Collections.Generic;
-using System.Globalization;
+﻿using Microsoft.EntityFrameworkCore;
 using DGod.SuparCar.Application.Interfaces.Shared;
 using DGod.SuparCar.Application.Settings;
 using DGod.SuparCar.Infrastructure.DbContexts;
 using DGod.SuparCar.Infrastructure.Shared.Services;
-using Microsoft.Extensions.Options;
 
-namespace DGod.SuparCar.Web.Extensions
+namespace DGod.SuparCar.Host.Extensions
 {
     public static class ServiceCollectionExtensions
     {

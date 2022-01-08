@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "cross-env PROJECT=DGod.SuparCar.Web NODE_ENV=development ASPNETCORE_ENVIRONMENT=Development webpack serve --config ./builder/webpack/webpack.development.js",
-    "build": "cross-env PROJECT=DGod.SuparCar.Web NODE_ENV=production ASPNETCORE_ENVIRONMENT=Production webpack --config ./builder/webpack/webpack.production.js"
+    "test": "cross-env PROJECT=DGod.SuparCar.Host NODE_ENV=development ASPNETCORE_ENVIRONMENT=Development webpack serve --config ./builder/webpack/webpack.development.js",
+    "build": "cross-env PROJECT=DGod.SuparCar.Host NODE_ENV=production ASPNETCORE_ENVIRONMENT=Production webpack --config ./builder/webpack/webpack.production.js"
   },
   "dependencies": {
     "@babel/core": "^7.14.3",

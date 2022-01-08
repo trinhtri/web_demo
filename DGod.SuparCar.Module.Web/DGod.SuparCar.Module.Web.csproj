@@ -12,14 +12,24 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="ClientApp" />
-    </ItemGroup>
-
-    <ItemGroup>
+      <Content Include="builder.config.json">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
       <Content Include="Views\Shared\Layouts\_Layout.cshtml">
         <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
         <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="ClientApp\index.js" />
+      <None Include="ClientApp\modules\index.js" />
+      <None Include="ClientApp\pages\home.js" />
+      <None Include="ClientApp\styles\common\default.scss" />
+      <None Include="ClientApp\styles\pages\home.scss" />
+      <None Include="ClientApp\styles\style.scss" />
     </ItemGroup>
 
 </Project>

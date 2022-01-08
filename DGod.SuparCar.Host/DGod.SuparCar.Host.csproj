@@ -4,6 +4,7 @@
         <TargetFramework>net6.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>DGod.SuparCar.Host</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -11,7 +12,13 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\DGod.SuparCar.Application\DGod.SuparCar.Application.csproj" />
+      <ProjectReference Include="..\DGod.SuparCar.Domain\DGod.SuparCar.Domain.csproj" />
+      <ProjectReference Include="..\DGod.SuparCar.Infrastructure.CacheService\DGod.SuparCar.Infrastructure.CacheService.csproj" />
+      <ProjectReference Include="..\DGod.SuparCar.Infrastructure.Shared\DGod.SuparCar.Infrastructure.Shared.csproj" />
+      <ProjectReference Include="..\DGod.SuparCar.Infrastructure\DGod.SuparCar.Infrastructure.csproj" />
       <ProjectReference Include="..\DGod.SuparCar.Module.Web\DGod.SuparCar.Module.Web.csproj" />
+      <ProjectReference Include="..\DGod.SuparCar.Result\DGod.SuparCar.Result.csproj" />
     </ItemGroup>
 
     <ItemGroup>
