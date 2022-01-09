@@ -19,8 +19,4 @@
       <ProjectReference Include="..\DGod.SuparCar.Result\DGod.SuparCar.Result.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Interfaces\CacheServices" />
-    </ItemGroup>
-
 </Project>

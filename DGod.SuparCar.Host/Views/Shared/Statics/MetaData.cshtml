@@ -1,0 +1,14 @@
+﻿@using DGod.SuparCar.ViewModels
+@{
+    var metaConfig = ViewData["MetaDataConfig"] != null ? (MetaDataConfigViewModel) ViewData["MetaDataConfig"]  : new MetaDataConfigViewModel();
+    var metaHeader = metaConfig?.MetaDataHeader ?? new MetaDataHeaderModel();
+}
+
+<meta name="robots" content="noindex,nofollow" />
+@* <meta name="robots" content="index,follow,all"> *@
+<title>
+    @metaHeader?.Title
+</title>
+<meta name="description" content="@metaHeader.MetaDescription?.Trim()"/>
+<meta name="keywords" content="@metaHeader.MetaKeyword"/>
+<meta name="title" content="@metaHeader.MetaTitle"/>

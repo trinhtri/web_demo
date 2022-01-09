@@ -21,6 +21,7 @@ public static class ServiceCollectionExtensions
         #region Repositories
 
         services.AddTransient(typeof(IRepositoryAsync<>), typeof(RepositoryAsync<>));
+        services.AddTransient<IPostRepository, PostRepository>();
         services.AddTransient<ILogRepository, LogRepository>();
         services.AddTransient<IUnitOfWork, UnitOfWork>();
 

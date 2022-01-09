@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DGod.SuparCar.Application\DGod.SuparCar.Application.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AspNetCoreHero.Extensions.Caching" Version="1.1.0" />
+      <PackageReference Include="AspNetCoreHero.ThrowR" Version="1.0.0" />
+    </ItemGroup>
+
+</Project>

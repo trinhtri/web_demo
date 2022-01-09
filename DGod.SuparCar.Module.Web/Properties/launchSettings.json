@@ -9,6 +9,7 @@
   },
   "profiles": {
     "DGod.SuparCar.Module.Web": {
+      "hotReloadEnabled": true,
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

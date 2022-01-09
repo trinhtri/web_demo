@@ -19,13 +19,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DGod.SuparCar.Infrastructur
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DGod.SuparCar.Domain", "DGod.SuparCar.Domain\DGod.SuparCar.Domain.csproj", "{47F2C73D-0D86-4A5E-B947-D3D36E3EEBC0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DGod.SuparCar.Infrastructure.CacheService", "DGod.SuparCar.Infrastructure.CacheService\DGod.SuparCar.Infrastructure.CacheService.csproj", "{9EE717DF-2AD8-48C0-82E0-5DA8EAD4A08C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DGod.SuparCar.Infrastructure.CacheRepository", "DGod.SuparCar.Infrastructure.CacheRepository\DGod.SuparCar.Infrastructure.CacheRepository.csproj", "{9EE717DF-2AD8-48C0-82E0-5DA8EAD4A08C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{00427EF7-DC13-4BE7-9EB0-0DE6C328B02A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DGod.SuparCar.Module.Web", "DGod.SuparCar.Module.Web\DGod.SuparCar.Module.Web.csproj", "{6FF29B35-0BE6-4ABA-AA12-A079859BB035}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DGod.SuparCar.Host", "DGod.SuparCar.Host\DGod.SuparCar.Host.csproj", "{41A3D451-50A8-4D9C-8019-83F036C5BB9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DGod.SuparCar.ViewModels", "DGod.SuparCar.ViewModels\DGod.SuparCar.ViewModels.csproj", "{D8FC1CB2-EE3D-44F5-8759-46E5931F13C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +67,10 @@ Global
 		{41A3D451-50A8-4D9C-8019-83F036C5BB9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41A3D451-50A8-4D9C-8019-83F036C5BB9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41A3D451-50A8-4D9C-8019-83F036C5BB9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8FC1CB2-EE3D-44F5-8759-46E5931F13C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8FC1CB2-EE3D-44F5-8759-46E5931F13C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8FC1CB2-EE3D-44F5-8759-46E5931F13C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8FC1CB2-EE3D-44F5-8759-46E5931F13C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +85,7 @@ Global
 		{00427EF7-DC13-4BE7-9EB0-0DE6C328B02A} = {2B1F487C-0CF9-4567-97C2-9506F417EFC4}
 		{6FF29B35-0BE6-4ABA-AA12-A079859BB035} = {00427EF7-DC13-4BE7-9EB0-0DE6C328B02A}
 		{41A3D451-50A8-4D9C-8019-83F036C5BB9F} = {2B1F487C-0CF9-4567-97C2-9506F417EFC4}
+		{D8FC1CB2-EE3D-44F5-8759-46E5931F13C9} = {89403D35-4744-4432-89FE-D2A515234584}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A278796D-6F40-411B-BA93-2C23AEAFA1D3}

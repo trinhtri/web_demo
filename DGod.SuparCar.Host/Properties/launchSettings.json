@@ -9,6 +9,7 @@
   },
   "profiles": {
     "DGod.SuparCar.Host": {
+      "hotReloadEnabled": true,
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
@@ -16,6 +17,12 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
+    },
+    "Watch": {
+      "commandName": "Executable",
+      "workingDirectory": "$(ProjectDir)",
+      "executablePath": "dotnet.exe",
+      "commandLineArgs": "watch run"
     },
     "IIS Express": {
       "commandName": "IISExpress",

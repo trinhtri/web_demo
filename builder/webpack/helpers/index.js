@@ -16,7 +16,6 @@ const merge = require('lodash/merge');
 const glob = require('glob');
 const uniqueId = require('lodash/uniqueId');
 const slugify = require('slugify');
-const randomString = require("randomstring");
 
 function generateTemplate(content, { files }) {
   const { js, css } = files;

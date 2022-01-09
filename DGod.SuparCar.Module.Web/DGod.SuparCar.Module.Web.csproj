@@ -32,4 +32,8 @@
       <None Include="ClientApp\styles\style.scss" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\DGod.SuparCar.Application\DGod.SuparCar.Application.csproj" />
+    </ItemGroup>
+
 </Project>

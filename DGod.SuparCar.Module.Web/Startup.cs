@@ -13,6 +13,8 @@ namespace  DGod.SuparCar.Modules.Web.Controllers
 
         public override void Configure(IApplicationBuilder builder, IEndpointRouteBuilder routes, IServiceProvider serviceProvider)
         {
+            // builder.UseAuthentication();
+            // builder.UseAuthorization();
             routes.MapAreaControllerRoute
             (
                 name: "Home",

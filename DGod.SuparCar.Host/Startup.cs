@@ -1,6 +1,9 @@
 ﻿using DGod.SuparCar.Application.Extensions;
 using DGod.SuparCar.Host.Extensions;
+using DGod.SuparCar.Host.Permission;
+using DGod.SuparCar.Infrastructure.CacheRepository.Extensions;
 using DGod.SuparCar.Infrastructure.Extensions;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DGod.SuparCar.Host
 {
@@ -17,12 +20,16 @@ namespace DGod.SuparCar.Host
         public void ConfigureServices(IServiceCollection services)
         {
             // Add ASP.NET MVC and support for modules
+            services.AddSingleton<IAuthorizationPolicyProvider,PermissionPolicyProvider>();
+            services.AddScoped<IAuthorizationHandler, PermissionAuthorizationHandler>();
             services.AddOptions();
+            services.AddDistributedMemoryCache();
             services.AddApplicationLayer();
             services.AddInfrastructure(_configuration);
             services.AddPersistenceContexts(_configuration);
             services.AddSharedInfrastructure(_configuration);
             services.AddRepositories();
+            services.AddCacheRepositories();
             services
                 .AddOrchardCore()
                 .AddMvc();
@@ -37,7 +44,6 @@ namespace DGod.SuparCar.Host
             }
 
             app.UseStaticFiles();
-
             app.UseOrchardCore();
         }
     }

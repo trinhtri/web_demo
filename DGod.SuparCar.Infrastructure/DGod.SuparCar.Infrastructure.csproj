@@ -24,4 +24,9 @@
       <ProjectReference Include="..\DGod.SuparCar.Domain\DGod.SuparCar.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Identity" />
+      <Folder Include="Migrations" />
+    </ItemGroup>
+
 </Project>

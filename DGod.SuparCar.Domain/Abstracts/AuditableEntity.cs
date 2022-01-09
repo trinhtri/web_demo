@@ -2,7 +2,7 @@
 
 namespace DGod.SuparCar.Domain.Abstracts;
 
-public abstract class AuditableEntity : IAuditableBaseEntity, IBaseEntity
+public abstract class AuditableEntity : IAuditableBaseEntity
 {
     public long Id { get; set; }
 
