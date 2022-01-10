@@ -29,4 +29,9 @@ public class PostCacheRepository: IPostCacheRepository
         }
         return post;
     }
+
+    public Task<List<EPost>> GetListByIdsAsync(long[] ids, string postType)
+    {
+        throw new NotImplementedException();
+    }
 }

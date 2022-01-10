@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DGod.SuparCar.Host", "DGod.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DGod.SuparCar.ViewModels", "DGod.SuparCar.ViewModels\DGod.SuparCar.ViewModels.csproj", "{D8FC1CB2-EE3D-44F5-8759-46E5931F13C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DGod.SuparCar.Service", "DGod.SuparCar.Service\DGod.SuparCar.Service.csproj", "{985B05AD-7D0F-4201-95E6-270E1A3A6203}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{D8FC1CB2-EE3D-44F5-8759-46E5931F13C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8FC1CB2-EE3D-44F5-8759-46E5931F13C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8FC1CB2-EE3D-44F5-8759-46E5931F13C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{985B05AD-7D0F-4201-95E6-270E1A3A6203}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{985B05AD-7D0F-4201-95E6-270E1A3A6203}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{985B05AD-7D0F-4201-95E6-270E1A3A6203}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{985B05AD-7D0F-4201-95E6-270E1A3A6203}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,6 +92,7 @@ Global
 		{6FF29B35-0BE6-4ABA-AA12-A079859BB035} = {00427EF7-DC13-4BE7-9EB0-0DE6C328B02A}
 		{41A3D451-50A8-4D9C-8019-83F036C5BB9F} = {2B1F487C-0CF9-4567-97C2-9506F417EFC4}
 		{D8FC1CB2-EE3D-44F5-8759-46E5931F13C9} = {89403D35-4744-4432-89FE-D2A515234584}
+		{985B05AD-7D0F-4201-95E6-270E1A3A6203} = {89403D35-4744-4432-89FE-D2A515234584}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A278796D-6F40-411B-BA93-2C23AEAFA1D3}

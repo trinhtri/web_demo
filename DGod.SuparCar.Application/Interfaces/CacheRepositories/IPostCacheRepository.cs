@@ -5,4 +5,5 @@ namespace DGod.SuparCar.Application.Interfaces.CacheRepositories;
 public interface IPostCacheRepository
 {
     Task<EPost> GetByIdAsync(long brandId);
+    Task<List<EPost>> GetListByIdsAsync(long[] ids, string postType);
 }

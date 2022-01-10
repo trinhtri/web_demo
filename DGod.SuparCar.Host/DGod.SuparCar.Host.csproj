@@ -36,4 +36,22 @@
       <_ContentIncludedByDefault Remove="wwwroot\dist\runtime~home.119c81f96f4a1712b7ae.js" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="ClientApp\pages\home.js">
+        <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+      </None>
+      <None Update="ClientApp\styles\common\default.scss">
+        <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+      </None>
+      <None Update="ClientApp\styles\pages\home.scss">
+        <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+      </None>
+      <None Update="ClientApp\styles\style.scss">
+        <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+      </None>
+      <None Update="ClientApp\modules\index.js">
+        <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>

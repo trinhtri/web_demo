@@ -89,7 +89,12 @@ function getProjectInfo(folder = process.env.PROJECT || 'DGod.SuparCar.Host') {
   const rawAppSetting = appSettings; //eslint-disable-line
 
   const { assetsFolder, outputFolder, entryPoints=[], modules = [], appSettingKeys = [] } = rawConfig;
-  const entry = {};
+
+  const assetsFolderPath = path.resolve(projectFolderPath, assetsFolder);
+  const entry = {
+    // common: path.resolve(folder,assetsFolder,'index.js')
+  };
+  
   const moduleConfigs = []  
   //Read all layouts
   let defaultViews = [];
@@ -118,6 +123,10 @@ function getProjectInfo(folder = process.env.PROJECT || 'DGod.SuparCar.Host') {
     }]
   })
 
+  // defaultViews = [...defaultViews, {chunk:"common", viewPaths: [
+  //   ...glob.sync(path.resolve(folder, `./Views/Shared/Layouts/*.cshtml`)),
+  //   ...glob.sync(path.resolve(folder, `./Views/Shared/Layouts/*.html`))]
+  // }]
 
   let chunks = []
 
@@ -156,6 +165,7 @@ function getProjectInfo(folder = process.env.PROJECT || 'DGod.SuparCar.Host') {
     ...rawConfig,
     projectFolder: folder,
     projectFolderPath,
+    assetsFolderPath,
     entry,
     chunks,
     ...paths,
